@@ -3,8 +3,8 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Cate;
-
 use App\Models\Nav;
+
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Facades\Admin;
@@ -12,7 +12,7 @@ use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
 
-class CateController extends Controller
+class NavController extends Controller
 {
     use ModelForm;
 
@@ -25,7 +25,7 @@ class CateController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('栏目');
+            $content->header('导航');
             $content->description('列表');
 
             $content->body($this->grid());
@@ -42,7 +42,7 @@ class CateController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('栏目');
+            $content->header('导航');
             $content->description('编辑');
 
             $content->body($this->form()->edit($id));
@@ -58,7 +58,7 @@ class CateController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('栏目');
+            $content->header('导航');
             $content->description('新增');
 
             $content->body($this->form());
@@ -72,17 +72,21 @@ class CateController extends Controller
      */
     protected function grid()
     {
-        return Admin::grid(Cate::class, function (Grid $grid) {
+        return Admin::grid(Nav::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
-            $grid->name('名称(zh)');
-            $grid->name_en('名称(en)');
-            $grid->nav('导航')->display(function ($nav) {
-                return "<span class='label label-success'>{$nav['name']}</span>";
+
+            $grid->name('名称');
+            $grid->sort('排序');
+            $grid->cates('栏目s')->display(function ($cate) {
+
+                $cates = array_map(function ($cate) {
+                    return "<span class='label label-success'>{$cate['name']}</span>";
+                }, $cate);
+
+                return join('&nbsp;', $cates);
             });
-            $grid->count('文章总数');
-            $grid->status('状态');
-            $grid->created_at('创建时间');
+            $grid->created_at();
             //$grid->updated_at();
         });
     }
@@ -94,19 +98,13 @@ class CateController extends Controller
      */
     protected function form()
     {
-        return Admin::form(Cate::class, function (Form $form) {
+        return Admin::form(Nav::class, function (Form $form) {
 
             $form->display('id', 'ID');
-
-            $form->text('name','名称(zh)')->rules('required');
-            $form->text('name_en','名称(en)')->rules('required');
+            $form->text('name', '名称')->rules('required');
             $form->number('sort','排序')->default('1');
-            $form->number('count','文章总数')->default('0');
-            $form->select('status','导航条')->options([1=>'可见',2=>'不可见'])->default('1');
-            $form->select('nav_id','所属导航')->options(Nav::all()->pluck('name', 'id'));
-
-            $form->display('created_at', '创建时间');
-            $form->display('updated_at', '更新时间');
+            $form->display('created_at', 'Created At');
+            $form->display('updated_at', 'Updated At');
         });
     }
 }

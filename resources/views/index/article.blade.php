@@ -228,6 +228,7 @@
                         <div class="author-next-article">
                             <div class="author-one c2">最近文章</div>
                             <a href="#" target="_blank">冷眼看快手、陌陌们的"短视频社交"</a>
+                            <a href="#" target="_blank">冷眼看快手、陌陌们的"短视频社交"</a>
                         </div>
                     </div>
                     <div class="box-moder hot-tag">

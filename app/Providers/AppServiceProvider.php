@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Encore\Admin\Config\Config;
 use Illuminate\Support\ServiceProvider;
+use Carbon\Carbon;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,6 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        Carbon::setLocale('zh');
         Config::load();  // 加上这一行
     }
 

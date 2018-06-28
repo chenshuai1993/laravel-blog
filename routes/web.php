@@ -13,8 +13,8 @@
 
 
 Route::get('/','IndexController@index')->name('home');
-Route::get('/list','IndexController@list')->name('list');
-Route::get('/article','IndexController@article')->name('article');
+/*Route::get('/list','IndexController@list')->name('list');
+Route::get('/article','IndexController@article')->name('article');*/
 Auth::routes();
 
 // Authentication Routes...
@@ -31,5 +31,19 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');*/
+
+//路由
+// id 全局约束, Providers/RouteServiceProvider.php
+Route::get('/blog/more', 'BlogController@blogMore')->name('blog.more');
+Route::get('/tag/more', 'BlogController@tagMore')->name('tag.more');
+
+
+//文章详情
+Route::get('/blog/{blog}/{title?}', 'BlogController@show')->name('blog.show');
+//栏目
+Route::get('/cate/{cate}/{name?}', 'CateController@show')->name('cate.show');
+//标签
+Route::get('/tag/{tag}/{name?}', 'BlogController@tag')->name('tag.show');
+
 
 

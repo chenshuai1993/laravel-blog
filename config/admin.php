@@ -10,19 +10,19 @@ return [
     /*
      * Logo in admin panel header.
      */
-    'logo' => '<b>Laravel</b> admin',
+    'logo' => '<b>Im\'Shuai</b> admin',
 
     /*
      * Mini-logo in admin panel header.
      */
-    'logo-mini' => '<b>La</b>',
+    'logo-mini' => '<b>CS</b>',
 
     /*
      * Route configuration.
      */
     'route' => [
 
-        'prefix' => 'admin',
+        'prefix' => 'ping',
 
         'namespace' => 'App\\Admin\\Controllers',
 

@@ -18,21 +18,12 @@ class Blog extends Model
     }
 
 
-    public function index()
-    {
-        
-    }
-
     public function cates()
     {
         return $this->belongsTo(Cate::class,'cate_id','id');
     }
 
 
-    /*public function tags()
-    {
-        return $this->belongsToMany(Tag::class);
-    }*/
 
     /**
      * 获得此文章的所有标签。
@@ -41,5 +32,6 @@ class Blog extends Model
     {
         return $this->belongsToMany(Tag::class);
     }
+
 
 }

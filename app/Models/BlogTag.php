@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Tag;
 
 class BlogTag extends Model
 {
@@ -10,4 +11,8 @@ class BlogTag extends Model
 
     public $timestamps = false;
 
+    public function tag()
+    {
+        return $this->belongsTo(Tag::class);
+    }
 }

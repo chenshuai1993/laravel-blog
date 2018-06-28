@@ -1,14 +1,14 @@
 
-//·µ»Ø¶¥²¿
+//ï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½
 var scrolltotop={
 	setting:{
-		startline:100, //ÆðÊ¼ÐÐ
-		scrollto:0, //¹ö¶¯µ½Ö¸¶¨Î»ÖÃ
-		scrollduration:400, //¹ö¶¯¹ý¶ÉÊ±¼ä
-		fadeduration:[500,100] //µ­³öµ­ÏÖÏûÊ§
+		startline:100, //ï¿½ï¿½Ê¼ï¿½ï¿½
+		scrollto:0, //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Î»ï¿½ï¿½
+		scrollduration:400, //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+		fadeduration:[500,100] //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§
 	},
-	controlHTML:'<img src="images/top.png" style="width:30px; height:30px; border:0;" />', //·µ»Ø¶¥²¿°´Å¥
-	controlattrs:{offsetx:100,offsety:30},//·µ»Ø°´Å¥¹Ì¶¨Î»ÖÃ
+	controlHTML:'<img src="/images/top.png" style="width:30px; height:30px; border:0;" />', //ï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½ï¿½ï¿½Å¥
+	controlattrs:{offsetx:100,offsety:30},//ï¿½ï¿½ï¿½Ø°ï¿½Å¥ï¿½Ì¶ï¿½Î»ï¿½ï¿½
 	anchorkeyword:"#top",
 	state:{
 		isvisible:false,
@@ -50,7 +50,7 @@ var scrolltotop={
 			var iebrws=document.all;
 			mainobj.cssfixedsupport=!iebrws||iebrws&&document.compatMode=="CSS1Compat"&&window.XMLHttpRequest;
 			mainobj.$body=(window.opera)?(document.compatMode=="CSS1Compat"?$("html"):$("body")):$("html,body");
-			mainobj.$control=$('<div id="topcontrol" >'+mainobj.controlHTML+"</div>").css({position:mainobj.cssfixedsupport?"fixed":"absolute",bottom:mainobj.controlattrs.offsety,right:mainobj.controlattrs.offsetx,opacity:0,cursor:"pointer"}).attr({title:"·µ»Ø¶¥²¿"}).click(function(){mainobj.scrollup();return false;}).appendTo("body");if(document.all&&!window.XMLHttpRequest&&mainobj.$control.text()!=""){mainobj.$control.css({width:mainobj.$control.width()});}mainobj.togglecontrol();
+			mainobj.$control=$('<div id="topcontrol" >'+mainobj.controlHTML+"</div>").css({position:mainobj.cssfixedsupport?"fixed":"absolute",bottom:mainobj.controlattrs.offsety,right:mainobj.controlattrs.offsetx,opacity:0,cursor:"pointer"}).attr({title:"ï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½"}).click(function(){mainobj.scrollup();return false;}).appendTo("body");if(document.all&&!window.XMLHttpRequest&&mainobj.$control.text()!=""){mainobj.$control.css({width:mainobj.$control.width()});}mainobj.togglecontrol();
 			$('a[href="'+mainobj.anchorkeyword+'"]').click(function(){mainobj.scrollup();return false;});
 			$(window).bind("scroll resize",function(e){mainobj.togglecontrol();});
 		});
@@ -61,7 +61,7 @@ scrolltotop.init();
 
 
 
-/*µ¼º½>×ÊÑ¶*/
+/*ï¿½ï¿½ï¿½ï¿½>ï¿½ï¿½Ñ¶*/
 
 
 var timeout         = 0;
@@ -91,7 +91,7 @@ $(document).ready(function()
 document.onclick = jsddm_close;
 
 
-/*µ¼º½ËÑË÷*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 $(document).ready(function(){
 	
 	$('.search-li').click(function(){

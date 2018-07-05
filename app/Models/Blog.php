@@ -10,12 +10,17 @@ use App\Models\BlogTag;
 class Blog extends Model
 {
     //
-    public $typeList =['1' => '原创', '2'=> '转载'];
+    public $typeList =['0'=>'未知','1' => '原创', '2'=> '转载'];
 
-    public function getTypeAttribute($type)
+    /*public function getTypeAttribute($type)
     {
         return $this->typeList[$type];
     }
+
+    public function setTypeAttribute($value)
+    {
+        $this->attributes['type'] = array_search($value,$this->typeList);
+    }*/
 
 
     public function cates()

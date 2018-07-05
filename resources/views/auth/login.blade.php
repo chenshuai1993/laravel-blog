@@ -1,8 +1,11 @@
 @extends('layouts.app')
-
+@section('title','首页')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+
+    <div class="placeholder-height"></div>
+    <div class="container" id="index">
+
+        <!--内容-->
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
@@ -64,6 +67,7 @@
                 </div>
             </div>
         </div>
+        <!--内容-->
+
     </div>
-</div>
-@endsection
+@stop

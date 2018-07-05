@@ -1,17 +1,7 @@
-
-	
-	
-	
-	
-	/*µ¼º½appÏÂÔØÊó±ê¾­¹ý*/
-	
-	
-	
-	
-	var mst;
+var mst;
 			jQuery(".xiala li").hover(function(){
 			var curItem = jQuery(this);
-			mst = setTimeout(function(){//ÑÓÊ±´¥·¢
+			mst = setTimeout(function(){//ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 				curItem.find("div").slideDown('fast');
 				mst = null;
 			});
@@ -24,11 +14,11 @@
 	
 	
 	
-	/*µ×²¿Êó±ê¾­¹ý*/
+	/*ï¿½×²ï¿½ï¿½ï¿½ê¾­ï¿½ï¿½*/
 			var mst;
 			jQuery(".Qr-codee li").hover(function(){
 			var curItem = jQuery(this);
-			mst = setTimeout(function(){//ÑÓÊ±´¥·¢
+			mst = setTimeout(function(){//ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 				curItem.find("div").slideDown('fast');
 				mst = null;
 			});
@@ -39,11 +29,11 @@
 			
 
 
-	/*µ×²¿Êó±ê¾­¹ý*/
+	/*ï¿½×²ï¿½ï¿½ï¿½ê¾­ï¿½ï¿½*/
 			var mst;
 			jQuery(".article-left-btn-group li").hover(function(){
 			var curItem = jQuery(this);
-			mst = setTimeout(function(){//ÑÓÊ±´¥·¢
+			mst = setTimeout(function(){//ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 				curItem.find("div").slideDown('fast');
 				mst = null;
 			});
@@ -54,7 +44,7 @@
 			
 			
 	
-	//Ò³ÃæÇÐ»»
+	//Ò³ï¿½ï¿½ï¿½Ð»ï¿½
 	// JavaScript Document
 function Tabs2(thisObj,Num){
 if(thisObj.className == "active")return;

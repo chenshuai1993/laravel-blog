@@ -15,10 +15,10 @@
 Route::get('/','IndexController@index')->name('home');
 /*Route::get('/list','IndexController@list')->name('list');
 Route::get('/article','IndexController@article')->name('article');*/
-Auth::routes();
+//Auth::routes();
 
 // Authentication Routes...
-/*Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
@@ -30,7 +30,7 @@ Route::post('register', 'Auth\RegisterController@register');
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset');*/
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 //路由
 // id 全局约束, Providers/RouteServiceProvider.php

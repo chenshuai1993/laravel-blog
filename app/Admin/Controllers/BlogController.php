@@ -83,13 +83,14 @@ class BlogController extends Controller
 
             $grid->id('ID')->sortable();
             $grid->title('标题');
-            $grid->title('英文标题');
+            #$grid->title_en('英文标题');
             $grid->cates()->name_en('栏目名称'); //belongs
             $grid->type('文章类型');
             $grid->readed_sum('阅读量');
-            $grid->status('状态');
+            $grid->status('审核状态')->display(function ($status) {
+                return $status ? '审核' : '未审核';
+            });
             $grid->created_at('创建时间');
-            //$grid->tags('标签');
 
             $grid->tags()->display(function ($tag) {
 
@@ -113,25 +114,24 @@ class BlogController extends Controller
     {
         return Admin::form(Blog::class, function (Form $form) {
 
-
+            //var_dump($form->text('title'));
 
             $form->display('id', 'ID');
 
             // 添加text类型的input框
             $form->text('title', '文章标题')->rules('required');
-            //$form->text('content', '文章内容');
-            //$form->editor('content','文章内容')->rules('required');//富文本编辑框
 
             $form->editor('content');
 
             $form->image('img','文章图片')->uniqueName();
 
-
             $form->select('cate_id', '文章栏目')->options(Cate::all()->pluck('name', 'id'))->rules('required');
 
             $form->radio('type', '原创/转载')->options($this->typeList)->default('1');
+
+            $form->radio('status', '审核？')->options([0=>'未审核',1=>'审核']);
             $form->number('readed_sum','文章阅读量')->default(10);
-            $form->select('operate','推荐位置')->options([1 => '置顶推荐', 2 => '栏目推荐', '3' => '右侧推荐'])->default('1');
+            $form->select('operate','推荐位置')->options([0=>'普通',1 => '置顶推荐', 2 => '栏目推荐', '3' => '右侧推荐'])->default('0');
 
             $form->multipleSelect('tags')->options(Tag::all()->pluck('name', 'id'));
 

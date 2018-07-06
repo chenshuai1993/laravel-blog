@@ -22,7 +22,7 @@ return [
      */
     'route' => [
 
-        'prefix' => 'ping',
+        'prefix' => 'admin',
 
         'namespace' => 'App\\Admin\\Controllers',
 

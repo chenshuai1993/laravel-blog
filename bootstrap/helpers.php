@@ -100,7 +100,7 @@ if(! function_exists('get_tag_more') ){
             ->toArray();
 
         //查新blog
-        $blogs = Blog::select('id','desc','title','title_en','cate_id','type','readed_sum','created_at')->whereIn('id',$blog_ids)->get();
+        $blogs = Blog::select('id','desc','title','title_en','cate_id','type','readed_sum','created_at')->whereIn('id',$blog_ids)->orderBy('id','desc')->get();
 
         $blogCount = $blogs->toArray();
         if(empty($blogCount)){

@@ -1,7 +1,8 @@
 <header id="top" role="banner" class="transition">
     <div class="container">
         <div class="navbar-header transition">
-            <a href="/" title="首页"><img src="/images/logo.jpg" alt="陈帅同学" title="首页" /></a>
+           {{-- <a href="/" title="首页"><img src="/images/logo.jpg" alt="陈帅同学" title="首页" /></a>--}}
+            <a href="/" title="首页"><img src="/images/logo.png" alt="陈帅同学" title="首页" /></a>
         </div>
         <ul class="nav navbar-nav navbar-left" id="jsddm">
             @foreach(web_navs() as $key => $nav)
